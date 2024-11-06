@@ -35,7 +35,13 @@ class main():
                               "age":age,
                               "gender":gender,
                               "email":email}
-                json_object = json.dumps(dictionary, indent=4)
+                with open('Personas.json', 'r') as openfile:
+                    json_object1 = json.load(openfile)
+                json_object2 = json.dumps(dictionary, indent=4)
+                a = json_object2
+                b = str(json_object1)
+                json_object = json.loads(b)
+                json_object.update(a)
                 with open("Personas.json", "w", encoding="utf-8") as outfile:
                     outfile.write(json_object)
                 print("Dati ierakstiti faila Personas.json.")
