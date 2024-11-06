@@ -1,28 +1,21 @@
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "I m the best"
+    page.title = "Program"
+    page.theme_mode = 'dark'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
-
-    def minus_click(e):
-        txt_number.value = str(int(txt_number.value) - 1)
+    user_label = ft.Text('Text')
+    user_text = ft.TextField(value="0", width=150, text_align=ft.TextAlign.CENTER)
+    def get_info(e):
+        user_label.value = user_text.value
         page.update()
-
-    def plus_click(e):
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-
     page.add(
-        ft.Row(
-            [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                txt_number,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click),
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-        )
-    )
+        ft.Row([ft.IconButton(ft.icons.HOME, on_click=get_info),
+        ft.Icon(ft.icons.BACK_HAND)],
+        alignment=ft.MainAxisAlignment.CENTER),
 
-ft.app(main)
+        ft.Row([user_label,user_text],
+        alignment=ft.MainAxisAlignment.CENTER)
+        )    
+ft.app(target=main) #, view=ft.AppView.WEB_BROWSER
