@@ -38,7 +38,11 @@ class main():
                               "age":age,
                               "gender":gender,
                               "email":email}
-
+                with open('Personas.json', 'r') as openfile:
+                    json_object = json.load(openfile)           
+                print(json_object)
+                dictator = dictionary
+                dictator.update(json_object)
                 json_object = json.dumps(dictionary, indent=4)
                 with open("Personas.json", "w", encoding="utf-8") as outfile:
                     outfile.write(json_object)
