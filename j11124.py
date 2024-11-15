@@ -1,31 +1,44 @@
 import json
 
-personasss = []
-def pievienot_cilveku():
+def add_person():
     firstname = input("Ievadiet vardu: ")
     lastname = input("Ievadiet uzvardu: ")
     birthday = input("Ievadiet birthday: ")
     age = input("Ievadiet vecumu: ")
     gender = input("Ievadiet dzimumu: ")
     email = input("Ievadiet email: ")
-    dictionary = {"firstname":firstname,
+    sasnieg = []
+    dictionary = [{"firstname":firstname,
                     "lastname":lastname,
                     "birthday":birthday,
                     "age":age,
                     "gender":gender,
-                    "email":email}
-    file = open('Personas.json', 'r')
-    data=json.load(file)
-    file.close()
-    json_object = json.dumps(dictionary, indent=4)
+                    "email":email,
+                    "sasniegumi":sasnieg}]    
+    with open('Personas.json', 'r') as openfiles:
+        json_objects = json.load(openfiles)    
+    json_objects.append(dictionary)
+    json_object = json.dumps(json_objects, indent=4)
     with open("Personas.json", "w", encoding="utf-8") as outfile:
         outfile.write(json_object)
     print("Dati ierakstiti faila Personas.json.")
 
-def paradit_cilvekus():
+def print_people():
     with open('Personas.json', 'r') as openfile:
-        json_object = json.load(openfile)           
+        json_object = json.load(openfile)          
     print(json_object)
+
+def find_person():
+    person_id = input("Ievadiet id meklesanai: ")
+    with open('Personas.json', 'r') as openfiler:
+        json_objectr = json.load(openfiler)
+    for i in json_objectr:
+        if (i["id"]) == (person_id):
+            print("Cilveks atrasts.")          
+            print(json_objectr[i])
+        ievade = input("Vai gribat pievienot sasniegumu?(y/n): ")
+        if ievade == "y":
+            sasniegums = input("Ievadiet sasniegumu: ")
 
 class main():
     while True:
@@ -34,13 +47,9 @@ class main():
             print("3. Meklet cilveku")
             print("4. Iziet")
             choice = input("Izveleties darbibu: ")
-
-            if choice == '1':
-                pievienot_cilveku()
-            elif choice == '2':
-                paradit_cilvekus()
-            elif choice == '3':
-                paradit_cilvekus()
+            if choice == '1':add_person()
+            elif choice == '2':print_people()
+            elif choice == '3':find_person()
             elif choice == '4':
                 print("Iziet no programas.")
                 break
@@ -48,14 +57,3 @@ class main():
                 print("Nepareiza izvēle, mēģiniet vēlreiz")
 
 main()
-
-
-
-
-
-
-'''with open('Personas.json', 'r') as openfile:
-        json_object = json.load(openfile)           
-    print(json_object)
-    dictator = dictionary
-    dictator.update(json_object)'''
