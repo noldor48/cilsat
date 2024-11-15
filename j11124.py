@@ -1,5 +1,8 @@
 import json
 
+with open('Personas.json', 'r') as openfile:
+    json_object = json.load(openfile)           
+print(json_object)
 class Person:
     def __init__(self, firstname, lastname, birthday, age, gender, email):
         self.firstname = firstname
@@ -36,21 +39,19 @@ class main():
                               "gender":gender,
                               "email":email}
                 with open('Personas.json', 'r') as openfile:
-                    json_object1 = json.load(openfile)
-                json_object2 = json.dumps(dictionary, indent=4)
-                a = json_object2
-                b = str(json_object1)
-                json_object = json.loads(b)
-                json_object.update(a)
+                    json_object = json.load(openfile)           
+                print(json_object)
+                dictator = dictionary
+                dictator.update(json_object)
+                json_object = json.dumps(dictionary, indent=4)
                 with open("Personas.json", "w", encoding="utf-8") as outfile:
                     outfile.write(json_object)
                 print("Dati ierakstiti faila Personas.json.")
 
 
             elif choice == '2':
-                with open('Personas.json', 'r') as openfile:
-                    json_object = json.load(openfile)           
-                print(json_object)
+                pass
+
             elif choice == '3':
                 print()
             elif choice == '4':
@@ -62,3 +63,12 @@ class main():
 
 
 main()
+'''
+def add(args):
+    with open(DATA_FILENAME, mode='r', encoding='utf-8') as feedsjson:
+        feeds = json.load(feedsjson)
+    with open(DATA_FILENAME, mode='w', encoding='utf-8') as feedsjson:
+        entry = {}
+        entry['name'] = args.name
+        entry['url'] = args.url
+        json.dump(entry, feedsjson)'''
