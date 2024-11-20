@@ -1,9 +1,48 @@
-{
-    "id":12,
-    "firstname": "asdad",
-    "lastname": "adad",
-    "birthday": "adadada",
-    "age": "dadada",
-    "gender": "ada",
-    "email": "adsda"
-}
+[
+    {
+        "id": 12,
+        "firstname": "asdad",
+        "lastname": "adad",
+        "birthday": "adadada",
+        "age": "dadada",
+        "gender": "ada",
+        "email": "adsda",
+        "sasniegumi": [
+            {
+                "datums": "ff",
+                "vieta": "gg",
+                "sasniegums": "dd"
+            },
+            {
+                "datums": "df",
+                "vieta": "gdf",
+                "sasniegums": "sd"
+            },
+            {
+                "datums": "sdfsdfs",
+                "vieta": "sdfsddf",
+                "sasniegums": "sfsdfsf"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "firstname": "asasas",
+        "lastname": "asasa",
+        "birthday": "sdsds",
+        "age": "dfdf",
+        "gender": "dfdfdf",
+        "email": "sdfdfdfsfsd",
+        "sasniegumi": []
+    },
+    {
+        "id": 56,
+        "firstname": "dsdsds",
+        "lastname": "sdsds",
+        "birthday": "sdsd",
+        "age": "sdsd",
+        "gender": "sdsd",
+        "email": "sdsd",
+        "sasniegumi": []
+    }
+]
