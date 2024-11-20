@@ -1,5 +1,7 @@
 import json
 
+dictionary = []
+
 def add_person():
     firstname = input("Ievadiet vardu: ")
     lastname = input("Ievadiet uzvardu: ")
@@ -7,14 +9,13 @@ def add_person():
     age = input("Ievadiet vecumu: ")
     gender = input("Ievadiet dzimumu: ")
     email = input("Ievadiet email: ")
-    sasnieg = []
     dictionary = [{"firstname":firstname,
                     "lastname":lastname,
                     "birthday":birthday,
                     "age":age,
                     "gender":gender,
                     "email":email,
-                    "sasniegumi":sasnieg}]    
+                    "sasniegumi":[]}]    
     with open('Personas.json', 'r') as openfiles:
         json_objects = json.load(openfiles)    
     json_objects.append(dictionary)
@@ -29,6 +30,7 @@ def print_people():
     print(json_object)
 
 def find_person():
+
     person_id = input("Ievadiet id meklesanai: ")
     with open('Personas.json', 'r') as openfiler:
         json_objectr = json.load(openfiler)
@@ -36,9 +38,23 @@ def find_person():
         if (i["id"]) == (person_id):
             print("Cilveks atrasts.")          
             print(json_objectr[i])
-        ievade = input("Vai gribat pievienot sasniegumu?(y/n): ")
-        if ievade == "y":
-            sasniegums = input("Ievadiet sasniegumu: ")
+            while True:
+                ievade = input("Vai gribat pievienot sasniegumu?(y/n): ")
+                if ievade == "y":
+                    sasniegums = input("Ievadiet sasniegumu: ")
+                    date = input("Kads datums?: ")
+                    vieta = input("Kada pilseta?: ")
+                    sasniegumss = {
+                        "datums":date,
+                        "vieta":vieta,
+                        "sasniegums":sasniegums
+                    }
+                    dictionary["sasniegumi"].append(sasniegumss)
+                else:
+                    break
+            dictionary.append()
+               
+
 
 class main():
     while True:
