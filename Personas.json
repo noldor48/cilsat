@@ -1,48 +1,34 @@
 [
     {
-        "id": 12,
-        "firstname": "asdad",
-        "lastname": "adad",
-        "birthday": "adadada",
-        "age": "dadada",
-        "gender": "ada",
-        "email": "adsda",
+        "id": 1,
+        "firstname": "Germans",
+        "lastname": "Aliks",
+        "birthday": "06.07.2006",
+        "age": "18",
+        "gender": "Vir",
+        "email": "6a6lik10kuku6ka@gmail.com",
         "sasniegumi": [
             {
-                "datums": "ff",
-                "vieta": "gg",
-                "sasniegums": "dd"
-            },
-            {
-                "datums": "df",
-                "vieta": "gdf",
-                "sasniegums": "sd"
-            },
-            {
-                "datums": "sdfsdfs",
-                "vieta": "sdfsddf",
-                "sasniegums": "sfsdfsf"
+            "datums": "11.11.1488",
+            "vieta": "Melikanija",
+            "sasniegums": "Nolika pudeli groza"
             }
         ]
     },
     {
-        "id": 23,
-        "firstname": "asasas",
-        "lastname": "asasa",
-        "birthday": "sdsds",
-        "age": "dfdf",
-        "gender": "dfdfdf",
-        "email": "sdfdfdfsfsd",
-        "sasniegumi": []
-    },
-    {
-        "id": 56,
-        "firstname": "dsdsds",
-        "lastname": "sdsds",
-        "birthday": "sdsd",
-        "age": "sdsd",
-        "gender": "sdsd",
-        "email": "sdsd",
-        "sasniegumi": []
+        "id": 2,
+        "firstname": "Nikita",
+        "lastname": "Vecnij",
+        "birthday": "05.05.1991",
+        "age": "33",
+        "gender": "Vir",
+        "email": "nikita23vencik@gmail.com",
+        "sasniegumi": [
+            {
+                "datums": "21.11.2024",
+                "vieta": "Rezekne",
+                "sasniegums": "Princis"
+            }
+        ]
     }
 ]

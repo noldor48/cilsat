@@ -30,8 +30,8 @@ def print_people():
     with open('Personas.json', 'r') as openfile:
         json_object = json.load(openfile)          
     print(json_object)
-
-def pievienot_sasniegumu():
+    
+def pievienot_sasniegumu(const):
     while True:
         ievade = input("Vai gribat pievienot sasniegumu?(y/n): ")
         if ievade == "y":
@@ -45,7 +45,7 @@ def pievienot_sasniegumu():
             }
             with open('Personas.json', 'r') as openfiles:
                 json_objects = json.load(openfiles)    
-            json_objects[0]["sasniegumi"].append(sasniegumss)
+            json_objects[const]["sasniegumi"].append(sasniegumss)
             json_object = json.dumps(json_objects, indent=4)
             with open("Personas.json", "w", encoding="utf-8") as outfile:
                 outfile.write(json_object)
@@ -57,13 +57,14 @@ def find_person():
     person_id = int(input("Ievadiet id meklesanai: "))
     with open('Personas.json', 'r') as openfiler:
         json_objekto = json.load(openfiler)
+    const = 0
     for i in json_objekto:
         if i["id"] == person_id:
-            print("Cilveks atrasts.")
-            pievienot_sasniegumu()
+            print("Cilveks atrasts.")            
+            pievienot_sasniegumu(const)
             break         
             #dictionary.append(s)
-               
+        const += 1
 
 
 class main():
