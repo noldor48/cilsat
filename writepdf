@@ -1,0 +1,12 @@
+import aspose.pdf as ap
+
+document = ap.Document("output.pdf")
+mainigais = input("Ievadi kaut ko pdf faila: ")
+
+document1 = ap.Document()
+page = document1.pages.add()
+text_fragment = ap.text.TextFragment(mainigais)
+document.pages.add(page.paragraphs.add(text_fragment))
+
+document1.pages.add(document.pages)
+document1.save("output.pdf")
