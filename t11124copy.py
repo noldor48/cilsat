@@ -1,4 +1,6 @@
 import sqlite3
+from tkinter import *
+from tkinter import ttk
 
 conn = sqlite3.connect('Persons.db')
 cursor = conn.cursor()
@@ -45,12 +47,26 @@ def find_person():
     pievienot_sasniegumu(perspecid)
 
 class main():
+    root = Tk()
+    root.title("Project")
+    root.iconbitmap(default="useri.ico")
+    root.geometry("300x250")
+    root.mainloop()
     while True:
-            print("\n1. Pievienot cilveku")
-            print("2. Paradit visus cilvekus")
-            print("3. Meklet cilveku")
-            print("4. Iziet")
-            choice = input("Izveleties darbibu: ")
+            label0 = ttk.Label()
+            label0.pack(anchor=NW, padx=6, pady=6)
+            label0["text"] = "1. Pievienot cilveku \n2. Paradit visus cilvekus \n3. Meklet cilveku \n4. Iziet"
+            def right():
+                print()
+            entry = ttk.Entry()
+            entry.pack(anchor=NW, padx=6, pady=6)
+            
+            btn = ttk.Button(text="Click", command=right)
+            btn.pack(anchor=NW, padx=6, pady=6)
+            
+            label1 = ttk.Label()
+            label1.pack(anchor=NW, padx=6, pady=6)
+            choice = 1
             if choice == '1':add_person()
             elif choice == '2':print_people()
             elif choice == '3':find_person()
